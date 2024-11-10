@@ -20,18 +20,27 @@ public class GradeBook {
             System.out.println("\nPlease make a selection:\n");
             System.out.println("1) List Class Grades");
             System.out.println("2) Exit");
+             System.out.println("3) update grade");
             System.out.print("\nPlease choose an option: ");
             String choice = input.nextLine();
             System.out.println();
             switch(choice) {
                 case "1": // TODO: write a loop that, for each student prints 
                           //       lname, fname: grade 
+                          for (Student student : students) {
+                        System.out.println(student.getLastName() + ", " + student.getFirstName() + ": " + student.getGrade());
+                    }
                     continue;
                 case "2":
                     System.out.println("Goodbye!");
                     return;
 
                 // Challenge: write another option to allow updating grades for a selected student
+           case "3":    
+           System.out.println("enter new greade");
+                    students[0].setGrade(input.nextInt());
+                    input.nextLine(); 
+
             }
         }
     }
